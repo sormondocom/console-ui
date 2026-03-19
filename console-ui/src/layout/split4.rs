@@ -43,7 +43,8 @@ impl Split4 {
         }
     }
 
-    fn pane_idx(pane: Pane4) -> usize {
+    #[allow(dead_code)]
+    pub fn pane_idx(pane: Pane4) -> usize {
         match pane { Pane4::TopLeft => 0, Pane4::TopRight => 1, Pane4::BottomLeft => 2, Pane4::BottomRight => 3 }
     }
 }

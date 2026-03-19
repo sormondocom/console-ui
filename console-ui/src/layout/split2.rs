@@ -1,5 +1,5 @@
-use crate::canvas::{Cell, SubCanvas};
-use crate::color::{Color, StyleFlags};
+use crate::canvas::SubCanvas;
+use crate::color::Color;
 use crate::event::Key;
 use crate::term::caps;
 use crate::widget::traits::{InteractiveWidget, Widget};

@@ -53,7 +53,7 @@ impl Menu {
         self.items.get(self.cursor).map(|s| s.as_str())
     }
 
-    fn adjust_scroll(&mut self, visible: u16) {
+    pub fn adjust_scroll(&mut self, visible: u16) {
         let v = visible as usize;
         if self.cursor < self.scroll_offset {
             self.scroll_offset = self.cursor;

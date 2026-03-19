@@ -1,4 +1,4 @@
-use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyModifiers};
+use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind, KeyModifiers};
 use std::time::Duration;
 
 /// Simplified, cross-platform key abstraction over `crossterm::event::Event`.
@@ -42,7 +42,7 @@ pub fn poll_key(timeout: Duration) -> std::io::Result<Option<Key>> {
 
 fn translate(ev: Event) -> Option<Key> {
     match ev {
-        Event::Key(KeyEvent { code, modifiers, .. }) => Some(translate_key(code, modifiers)),
+        Event::Key(KeyEvent { code, modifiers, kind: KeyEventKind::Press, .. }) => Some(translate_key(code, modifiers)),
         Event::Resize(cols, rows) => Some(Key::Resize(cols, rows)),
         _ => None,
     }

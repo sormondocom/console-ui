@@ -9,8 +9,12 @@ license     = "MIT"
 crossterm     = "0.28"
 unicode-width = "0.2"
 bitflags      = "2"
+serde         = { version = "1", features = ["derive"], optional = true }
+serde_json    = { version = "1", optional = true }
 
 [features]
-default = ["color"]
+default = ["color", "serde-json"]
 # Disable to strip the 256-color downgrade palette (saves ~3 KB, for tiny targets)
-color   = []
+color      = []
+# Enable JSON serialization of screen definitions
+serde-json = ["dep:serde", "dep:serde_json"]

@@ -3,48 +3,43 @@
     "configurations": [
         {
             "name": "Run Demo",
-            "type": "lldb",
+            "type": "cppvsdbg",
             "request": "launch",
-            "cargo": {
-                "args": ["build", "--package", "console-ui-demo", "--bin", "console-ui-demo"],
-                "filter": { "name": "console-ui-demo", "kind": "bin" }
-            },
+            "program": "D:/Rust/cargo/debug/console-ui-demo.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "terminal": "integrated"
+            "console": "externalTerminal",
+            "preLaunchTask": "cargo build demo (debug)"
         },
         {
             "name": "Run Demo (release)",
-            "type": "lldb",
+            "type": "cppvsdbg",
             "request": "launch",
-            "cargo": {
-                "args": ["build", "--package", "console-ui-demo", "--bin", "console-ui-demo", "--release"],
-                "filter": { "name": "console-ui-demo", "kind": "bin" }
-            },
+            "program": "D:/Rust/cargo/release/console-ui-demo.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "terminal": "integrated"
+            "console": "externalTerminal",
+            "preLaunchTask": "cargo build demo (release)"
         },
         {
             "name": "Test console-ui",
-            "type": "lldb",
+            "type": "cppvsdbg",
             "request": "launch",
-            "cargo": {
-                "args": ["test", "--package", "console-ui", "--no-run"],
-                "filter": { "name": "console-ui", "kind": "lib" }
-            },
+            "program": "D:/Rust/cargo/debug/deps/console_ui.exe",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "preLaunchTask": "cargo test console-ui (build only)"
         },
         {
             "name": "Test All",
-            "type": "lldb",
+            "type": "cppvsdbg",
             "request": "launch",
-            "cargo": {
-                "args": ["test", "--workspace", "--no-run"]
-            },
+            "program": "D:/Rust/cargo/debug/deps/console_ui.exe",
             "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "preLaunchTask": "cargo test all (build only)"
         }
     ]
 }

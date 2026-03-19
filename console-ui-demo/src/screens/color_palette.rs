@@ -1,4 +1,5 @@
 use console_ui::prelude::*;
+use console_ui::canvas::SubCanvas;
 use super::Action;
 
 pub struct ColorPalette {

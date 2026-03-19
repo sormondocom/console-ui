@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cargo build demo (debug)",
+            "type": "cargo",
+            "command": "build",
+            "args": ["--package", "console-ui-demo"],
+            "problemMatcher": ["$rustc"],
+            "group": "build"
+        },
+        {
+            "label": "cargo build demo (release)",
+            "type": "cargo",
+            "command": "build",
+            "args": ["--package", "console-ui-demo", "--release"],
+            "problemMatcher": ["$rustc"],
+            "group": "build"
+        },
+        {
+            "label": "cargo test console-ui (build only)",
+            "type": "shell",
+            "command": "cargo test --package console-ui --no-run && (Get-ChildItem 'D:/Rust/cargo/debug/deps/console_ui-*.exe' | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Copy-Item -Destination 'D:/Rust/cargo/debug/deps/console_ui.exe' -Force)",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                }
+            },
+            "problemMatcher": ["$rustc"],
+            "group": "test"
+        },
+        {
+            "label": "cargo test all (build only)",
+            "type": "shell",
+            "command": "cargo test --workspace --no-run && (Get-ChildItem 'D:/Rust/cargo/debug/deps/console_ui-*.exe' | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | Copy-Item -Destination 'D:/Rust/cargo/debug/deps/console_ui.exe' -Force)",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": ["-NoProfile", "-Command"]
+                }
+            },
+            "problemMatcher": ["$rustc"],
+            "group": "test"
+        }
+    ]
+}

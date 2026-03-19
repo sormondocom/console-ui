@@ -55,6 +55,7 @@ pub mod canvas;
 pub mod color;
 pub mod event;
 pub mod layout;
+pub mod serial;
 pub mod term;
 pub mod widget;
 
@@ -67,6 +68,7 @@ pub mod prelude {
     pub use crate::canvas::{Canvas, Renderer, SubCanvas};
     pub use crate::color::{BasicColor, Color, StyleFlags};
     pub use crate::event::{poll_key, read_key, Key};
-    pub use crate::layout::{HSplit, Pane2, Pane4, Split3, Split4, VSplit};
+    pub use crate::layout::{AnchorId, AnchorLayout, Edge, HSplit, Pane2, Pane4, Split3, Split4, VSplit};
     pub use crate::term::{caps, init_caps, ColorLevel, RawModeGuard, TermCaps};
-    pub use crate::widget::{Align, InteractiveWidget, Menu, Panel, Table, TextBlock, Widget, Wr
+    pub use crate::widget::{Align, InteractiveWidget, Menu, Panel, Table, TextBlock, Widget, WrapMode};
+}

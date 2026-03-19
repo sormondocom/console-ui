@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(git -C /d/console-ui log --oneline -10)",
-      "Bash(cargo build:*)"
+      "Bash(cargo build:*)",
+      "Bash(cargo test:*)",
+      "Bash(ls d:/console-ui/target/debug/*.exe)",
+      "Bash(cmd /c \"dir D:\\\\console-ui\\\\target\\\\debug\\\\*.exe 2>&1\")",
+      "Bash(cmd /c \"dir D:\\\\Rust\\\\cargo\\\\debug\\\\*.exe 2>&1\")",
+      "Bash(powershell -Command \"Get-ChildItem D:\\\\console-ui -Recurse -Filter ''*.exe'' -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell -Command \"Get-ChildItem D:\\\\console-ui -Directory | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem D:\\\\Rust -Recurse -Filter ''console-ui-demo.exe'' -ErrorAction SilentlyContinue | Select-Object FullName\")",
+      "Bash(powershell -Command \"Get-ChildItem C:\\\\Users\\\\Shawn\\\\.cargo -Filter ''config*'' -Recurse | Select-Object FullName\")",
+      "Bash(powershell -Command \"Test-Path C:\\\\Users\\\\Shawn\\\\.cargo\\\\config.toml; Get-Content C:\\\\Users\\\\Shawn\\\\.cargo\\\\config.toml -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -Command \"Get-ChildItem D:\\\\Rust\\\\cargo\\\\debug -Filter ''*.exe'' | Select-Object Name\")",
+      "Bash(powershell -Command \"[System.Environment]::GetEnvironmentVariable\\(''CARGO_TARGET_DIR'', ''User''\\); [System.Environment]::GetEnvironmentVariable\\(''CARGO_TARGET_DIR'', ''Machine''\\)\")",
+      "Bash(xargs grep:*)"
     ]
   }
 }
