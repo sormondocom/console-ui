@@ -1,0 +1,50 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Demo",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["build", "--package", "console-ui-demo", "--bin", "console-ui-demo"],
+                "filter": { "name": "console-ui-demo", "kind": "bin" }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "terminal": "integrated"
+        },
+        {
+            "name": "Run Demo (release)",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["build", "--package", "console-ui-demo", "--bin", "console-ui-demo", "--release"],
+                "filter": { "name": "console-ui-demo", "kind": "bin" }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "terminal": "integrated"
+        },
+        {
+            "name": "Test console-ui",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["test", "--package", "console-ui", "--no-run"],
+                "filter": { "name": "console-ui", "kind": "lib" }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Test All",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": ["test", "--workspace", "--no-run"]
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

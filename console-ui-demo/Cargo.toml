@@ -1,0 +1,12 @@
+[package]
+name    = "console-ui-demo"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "console-ui-demo"
+path = "src/main.rs"
+
+[dependencies]
+console-ui = { path = "../console-ui" }
+crossterm  = "0.28"

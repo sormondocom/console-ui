@@ -1,0 +1,3 @@
+[workspace]
+members  = ["console-ui", "console-ui-demo"]
+resolver = "2"

@@ -1,0 +1,16 @@
+[package]
+name        = "console-ui"
+version     = "0.1.0"
+edition     = "2021"
+description = "Cross-platform console UI library — VT-100 through True Color 24-bit"
+license     = "MIT"
+
+[dependencies]
+crossterm     = "0.28"
+unicode-width = "0.2"
+bitflags      = "2"
+
+[features]
+default = ["color"]
+# Disable to strip the 256-color downgrade palette (saves ~3 KB, for tiny targets)
+color   = []

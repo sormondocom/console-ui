@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /d/console-ui log --oneline -10)",
+      "Bash(cargo build:*)"
+    ]
+  }
+}
